@@ -1,59 +1,55 @@
-# KcbWeb
+An Angular web application that implements a complete user authentication flow. This application allows user to register, login, access a protected dashboard, and log out.
+To focus on learning angular concept, the project initially uses mock data instead of a backend API.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.18.
+Learning Objectives:
+1. Angular project structure
+2. Components
+3. Routing
+4. Reactive Forms
+5. TypeScript interfaces
+6. Services and Dependency injection
+7. Mock Authentication
+8. Route Guards
+9. HTTP Client
+10. JWT Authentication
+11. Backend Intergration
 
-## Development server
+Progress Completed:
+1. Angular Project Setup
 
-To start a local development server, run:
+installed Angular CLI
+Created a new Angular project
+Successfully ran the app 
+Explored the Angular project structure
+Modified the some default files
 
-```bash
-ng serve
-```
+2. Components
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Created the following components: Home, Register, Login, Dashboaerd.
+Explored Angular's component-based architecture
+Each Component contains it own .ts, .html, .css files
 
-## Code scaffolding
+3. Routing
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Configured Angular routing to navigate between pages
+Used RouterOutlet to display routed component and prepared the app for navigation using RouterLink.
 
-```bash
-ng generate component component-name
-```
+4. Registration and Login Form
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Built registration and login forms using Reactive Forms.
+Registration form includes:
+First Name
+Last Name
+Email
+Phone
+Password
+Confirm Password
 
-```bash
-ng generate --help
-```
+Login include:
+Email
+Password
 
-## Building
+Had an issue adding validation rules
+Created a submit function stores and logs data in an array users 
 
-To build the project run:
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
