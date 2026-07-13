@@ -1,11 +1,35 @@
 import { Component } from '@angular/core';
-import { Navbar } from '../../navbar/navbar';
-import { Sidebar } from '../../sidebar/sidebar';
+import { LucideAngularModule, Wallet } from 'lucide-angular';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Navbar, Sidebar],
+  imports: [LucideAngularModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
-export class Dashboard {}
+export class Dashboard {
+  readonly Wallet = Wallet; 
+
+  accounts = [
+    {
+      type: "Current",
+      icon: this.Wallet,
+      name: "KCB Current Account",
+      number: "0112 3456 7890",
+      balance: "145,000.00"
+    },
+    {
+      type: "saving",
+      name: "KCB Savings Account",
+      number: "0098 7654 3210",
+      balance: "45,000.20"
+    },
+    {
+      type: "bussiness",
+      name: "KCB M-pesa Account",
+      number: "254 712 345 678",
+      balance: "340,000.00"
+    }
+    
+  ];
+}

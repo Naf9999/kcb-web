@@ -1,4 +1,28 @@
-<div class="h-screen flex flex-col">
-  <app-navbar></app-navbar>
-  <app-sidebar></app-sidebar>
-</div>
+<section class="p-8">
+
+    <h1 class="font-bold">Good morning, John 👋</h1>
+    <p>Here's what's happening with your acccounts today.</p>
+
+  <div class="m-4 grid grid-cols-4 w-[1200px] gap-4">
+    <div class="h-45 w-70 bg-white shadow-2xl p-4 rounded-2xl">
+      <p class="font-medium mb-3">Total Balance</p>
+      <p class="font-bold">KES 530,000.20</p>
+      <p class="text-[12px]"><span class="text-green-500">+12.5%</span> from last month</p>
+    </div>
+    @for (account of accounts; track account.type) {
+      <div class="h-45 w-70 bg-white shadow-2xl p-4 rounded-2xl">
+        <div class="flex items-center justify-center gap-2 my-4">
+          <lucide-icon [img]="Wallet" class="w-6 h-6 text-green-500"></lucide-icon>
+          <div>
+            <p class="font-medium">{{ account.name }}</p>
+            <p class="text-[12px]">{{ account.number }}</p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <p class="font-bold mt-4">KES {{ account.balance }}</p>
+          <p class="text-[11px] font-serif">Available Balance</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
