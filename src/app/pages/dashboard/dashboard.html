@@ -1,7 +1,15 @@
-<section class="p-8">
-
+<section class="px-8 py-4">
+  @if ( hour < 12) {
     <h1 class="font-bold">Good morning, John 👋</h1>
-    <p>Here's what's happening with your acccounts today.</p>
+  }
+  @else if (hour < 17) {
+    <h1 class="font-bold">Good Afternoon, John 👋</h1>
+  }@else if(hour < 21) {
+    <h1 class="font-bold">Good Evening, John 👋</h1>
+  }@else {
+    <h1 class="font-bold">Good Night, John 👋</h1>
+  }
+  <p>Here's what's happening with your acccounts today.</p>
 
   <div class="m-4 grid grid-cols-4 w-[1200px] gap-4">
     <div class="h-45 w-70 bg-white shadow-xl border-1 border-green-200 p-4 rounded-2xl">
@@ -26,43 +34,98 @@
     }
   </div>
 
-  <div class="w-85 shadow-xl border-1 border-green-200 rounded-2xl p-8">
-    <div class="flex items-center justify-between mb-4">
-      <h2 class="font-bold">Recent Transaction</h2>
-      <button class="text-green-500">View all</button>
+  <div class="flex my-4 ">
+    <div class="w-100 m-2 shadow-xl border-1 border-green-200 rounded-2xl p-8">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-bold">Recent Transaction</h2>
+        <button class="text-green-500">View all</button>
+      </div>
+      <div>
+        <div class="flex items-center justify-between border-b-1 border-green-400 p-2">
+          <div>
+            <h3 class="font-medium">Payment to safaricom</h3>
+            <p class="text-[10px]">Mobile Bill</p>
+          </div>
+          <div>
+            <p class="font-medium">-KES 1,200.00</p>
+            <p class="text-[10px]">May 20, 2026</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between border-b-1 border-green-400 p-2">
+          <div>
+            <h3 class="font-medium">Salary Deposit</h3>
+            <p class="text-[10px]">From ABC Company</p>
+          </div>
+          <div>
+            <p class="font-medium text-green-500">+KES 85,000.00</p>
+            <p class="text-[10px]">May 20, 2026</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between border-b-1 border-green-400 p-2">
+          <div>
+            <h3 class="font-medium">Payment to KPLC</h3>
+            <p class="text-[10px]">Utilities</p>
+          </div>
+          <div>
+            <p class="font-medium">-KES 2,250.00</p>
+            <p class="text-[10px]">May 18, 2026</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="flex items-center justify-between border-b-1 border-green-400 p-2">
-        <div>
-          <h3 class="font-medium">Payment to safaricom</h3>
-          <p class="text-[10px]">Mobile Bill</p>
+
+    <div class="my-4 mx-6 px-2 w-70 border-green-200 border-1 rounded-xl shadow-xl p-4">
+      <h2 class="font-medium m-2">Quick Actions</h2>
+      <div class="grid grid-cols-2 grid-row-3 gap-2">
+        <div class="p-2 rounded-xl border-1 border-pink-200 shadow-md">
+          <a class="flex items-center justify-center flex-col text-sm">
+            <lucide-icon [img]="Wallet" class="w-6 h-6 mb-2 text-green-500"></lucide-icon>
+            Send Money
+          </a>
         </div>
-        <div>
-        <p class="font-medium">-KES 1,200.00</p>
-        <p class="text-[10px]">May 20, 2026</p>
+        <div class="p-2 rounded-xl border-1 border-pink-200 shadow-md">
+          <a class="flex items-center justify-center flex-col text-sm">
+            <lucide-icon [img]="Wallet" class="w-6 h-6 mb-2 text-green-500"></lucide-icon>
+            Pay Bill
+          </a>
+        </div>
+        <div class="p-2 rounded-xl border-1 border-pink-200 shadow-md">
+          <a class="flex items-center justify-center flex-col text-sm">
+            <lucide-icon [img]="Wallet" class="w-6 h-6 mb-2 text-green-500"></lucide-icon>
+            Buy Airtime
+          </a>
+        </div>
+        <div class="p-2 rounded-xl border-1 border-pink-200 shadow-md">
+          <a class="flex items-center justify-center flex-col text-sm">
+            <lucide-icon [img]="Wallet" class="w-6 h-6 mb-2 text-green-500"></lucide-icon>
+            Bank Statement
+          </a>
+        </div>
+        <div class="p-2 rounded-xl border-1 border-pink-200 shadow-md">
+          <a class="flex items-center justify-center flex-col text-sm">
+            <lucide-icon [img]="Wallet" class="w-6 h-6 mb-2 text-green-500"></lucide-icon>
+            Open Account
+          </a>
+        </div>
+        <div class="p-2 rounded-xl border-1 border-pink-200 shadow-md">
+          <a class="flex items-center justify-center flex-col text-sm">
+            <lucide-icon [img]="Wallet" class="w-6 h-6 mb-2 text-green-500"></lucide-icon>
+            Apply for Loan
+          </a>
         </div>
       </div>
+    </div>
+    <div class="my-4 mx-4">
+      <div class="flex p-4 rounded-xl border-1 border-green-200 shadow-md">
+        <div>
+          <h3 class="font-medium my-2 ">Grow your money</h3>
+          <p>Start an investment plan today and secure your future.</p>
 
-      <div class="flex items-center justify-between border-b-1 border-green-400 p-2">
-        <div>
-          <h3 class="font-medium">Salary Deposit</h3>
-          <p class="text-[10px]">From ABC Company</p>
+          <button class="p-2 my-2 bg-green-500 text-white rounded-xl">Invest Now</button>
         </div>
-        <div>
-        <p class="font-medium text-green-500">+KES 85,000.00</p>
-        <p class="text-[10px]">May 20, 2026</p>
-        </div>
-      </div>
-
-      <div class="flex items-center justify-between border-b-1 border-green-400 p-2">
-        <div>
-          <h3 class="font-medium">Payment to KPLC</h3>
-          <p class="text-[10px]">Utilities</p>
-        </div>
-        <div>
-        <p class="font-medium">-KES 2,250.00</p>
-        <p class="text-[10px]">May 18, 2026</p>
-        </div>
+        <img src="invest.jpg" alt="invest" class="w-25 h-auto"/>
       </div>
     </div>
   </div>

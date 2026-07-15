@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { LucideAngularModule, Wallet } from 'lucide-angular';
+import { QuickActions } from '../../quick-actions/quick-actions';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, QuickActions],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -32,4 +33,33 @@ export class Dashboard {
     }
     
   ];
+
+  quickActions = [
+    {
+      id: 1,
+      title: 'Send Money'
+    },
+    {
+      id: 2,
+      title: 'Pay Bill'
+    },
+    {
+      id: 3,
+      title: 'Buy Airtime'
+    },
+    {
+      id: 4,
+      title: 'Bank Statement'
+    },
+    {
+      id: 5,
+      title: 'Open Account'
+    },
+    {
+      id: 6,
+      title: 'Apply Loan'
+    }
+  ]
+
+  hour = new Date().getHours();
 }
