@@ -1,1 +1,37 @@
-<p>accounts works!</p>
+<section>
+  <div class="flex items-center justify-between m-2 p-2">
+    <div>
+      <h2 class="font-bold">My Accounts</h2>
+      <p>Manage and view all your accounts in one place.</p>
+    </div>
+    <div>
+      <p>Total Balance</p>
+      <h2 class="font-bold text-green-500">KES 530,000.20</h2>
+    </div>
+  </div>
+
+  <div class="border border-pink-300 rounded-xl">
+    @for (account of accounts; track account.type) {
+      <div class="flex items-center justify-between px-4 py-8 border border-green-200">
+        <div class="flex items-center justify-center">
+          <lucide-angular
+            [img]="account.icon"
+            class="h-10 w-10 text-green-500 mx-2 bg-sky-100 rounded-full flex items-center justify-center"
+          ></lucide-angular>
+          <div class="">
+            <h2 class="font-medium">{{ account.name }}</h2>
+            <small>{{ account.number }}</small>
+          </div>
+        </div>
+        <div class="mr-4">
+          <h2 class="font-medium text-sm">KES {{ account.balance }}</h2>
+          <small>Availble Balance</small>
+        </div>
+      </div>
+    }
+  </div>
+  <div class="border border-sky-300 my-4 p-4 rounded-xl flex">
+    <lucide-angular [img]="Plus" class="h-6 w-6 text-green-600"></lucide-angular>
+    <h1 class="text-green-600 text-[16px] mx-2 font-medium">Open New Account</h1>
+  </div>
+</section>

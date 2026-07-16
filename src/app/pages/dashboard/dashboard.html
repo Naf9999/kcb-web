@@ -19,7 +19,7 @@
     @for (account of accounts; track account.type) {
       <div class="h-45 w-70 bg-white shadow-xl border border-green-200 p-4 rounded-xl">
         <div class="flex items-center justify-center gap-2 my-4">
-          <lucide-icon [img]="Wallet" class="w-6 h-6 text-green-500"></lucide-icon>
+          <lucide-angular [img]="account.icon" class="w-6 h-6 text-green-500"></lucide-angular>
           <div>
             <p class="font-medium">{{ account.name }}</p>
             <p class="text-[12px]">{{ account.number }}</p>
@@ -81,7 +81,7 @@
         @for (quickActions of quickActions; track quickActions.id) {
           <div class="p-2 rounded-xl border border-pink-200 shadow-md">
             <a class="flex items-center justify-center flex-col text-sm">
-              <lucide-icon [img]="Wallet" class="w-6 h-6 mb-2 text-green-500"></lucide-icon>
+              <lucide-angular [img]="quickActions.icon" class="w-6 h-6 mb-2 text-green-500"></lucide-angular>
               {{ quickActions.title }}
             </a>
           </div>

@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AccountCardService } from '../../services/account-card-service';
+import { LucideAngularModule, Plus } from 'lucide-angular';
 
 @Component({
   selector: 'app-accounts',
-  imports: [],
+  imports: [LucideAngularModule],
   templateUrl: './accounts.html',
   styleUrl: './accounts.css',
 })
-export class Accounts {}
+export class Accounts {
+  readonly Plus = Plus;
+
+  accounts: any[] = [];
+
+  constructor(private accountService: AccountCardService) {
+    this.accounts = this.accountService.getAccounts();
+  }
+}
