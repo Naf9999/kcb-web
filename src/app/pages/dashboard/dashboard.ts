@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LucideAngularModule, Router, Wallet, PiggyBank, Smartphone, Send, ReceiptText, FileSliders, UserRoundPlus } from 'lucide-angular';
+import { LucideAngularModule, Router, Wallet, PiggyBank, Smartphone, Send, ReceiptText, FileSliders, UserRoundPlus, Bell } from 'lucide-angular';
 import { QuickActions } from '../../quick-actions/quick-actions';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
@@ -11,6 +11,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class Dashboard {
   readonly Wallet = Wallet; 
+  readonly Bell = Bell; 
 
   accounts = [
     {

@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { LucideAngularModule, House, User, Bell, Mail, Menu } from 'lucide-angular';
 
 @Component({
@@ -16,4 +16,6 @@ export class Navbar {
   readonly Mail = Mail;
 
   currentDate = new Date();
+
+  menuClicked = output<void>();
 }

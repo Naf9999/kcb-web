@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { Sidebar } from '../sidebar/sidebar';
 import { Dashboard } from '../pages/dashboard/dashboard';
 import { RouterOutlet } from '@angular/router';
-
 
 @Component({
   selector: 'app-app-layout',
@@ -11,4 +10,10 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app-layout.html',
   styleUrl: './app-layout.css',
 })
-export class AppLayout {}
+export class AppLayout {
+  sidebarOpen = signal(false);
+
+  toggleSidebar() {
+    this.sidebarOpen.update((value) => !value);
+  }
+}
