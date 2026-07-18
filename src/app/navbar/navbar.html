@@ -7,12 +7,12 @@
       <p class="font-medium ml-2">Dashboard</p>
     </div>
     <div class="flex items-center justify-between gap-4 float-right">
-      <p class="hidden text-sm">{{ currentDate | date: 'fullDate' }}</p>
+      <p class="max=lg:hidden text-sm">{{ currentDate | date: 'fullDate' }}</p>
       <i><lucide-icon [img]="Bell" class="w-6 h-6 text-green-500"></lucide-icon></i>
       <i><lucide-icon [img]="Mail" class="w-6 h-6 text-green-500"></lucide-icon></i>
       <div class="flex">
         <div class="rounded-full bg-green-400 w-8 h-8 m-2 flex items-center justify-center">
-          <lucide-icon [img]="User" class="w-6 h-6 text-white"></lucide-icon>
+          <lucide-icon routerLink="profile" [img]="User" class="w-6 h-6 text-white"></lucide-icon>
         </div>
         <div class="hidden lg:flex flex-col mr-4">
           <p class="font-medium">John Doe</p>

@@ -1,36 +1,54 @@
 <section class="flex flex-col w-full">
-  @if (hour < 12) {
-    <h1 class="font-bold">Good morning, John 👋</h1>
-  } @else if (hour < 17) {
-    <h1 class="font-bold">Good Afternoon, John 👋</h1>
-  } @else if (hour < 21) {
-    <h1 class="font-bold">Good Evening, John 👋</h1>
-  } @else {
-    <h1 class="font-bold">Good Night, John 👋</h1>
-  }
-  <p>Here's what's happening with your acccounts today.</p>
+  <div class="lg:ml-40">
+    @if (hour < 12) {
+      <h1 class="font-bold lg:text-2xl">Good morning, John 👋</h1>
+    } @else if (hour < 17) {
+      <h1 class="font-bold">Good Afternoon, John 👋</h1>
+    } @else if (hour < 21) {
+      <h1 class="font-bold">Good Evening, John 👋</h1>
+    } @else {
+      <h1 class="font-bold">Good Night, John 👋</h1>
+    }
+    <p class="mb-4">Here's what's happening with your acccounts today.</p>
+  </div>
 
   <div class="grid grid-cols-2 gap-1 lg:flex items-center justify-center">
-    <div class="lg:w-70 lg:h-40 bg-white shadow-xl border border-green-200 p-4 rounded-2xl">
-      <p class="font-medium mb-3">Total Balance</p>
+    <div class="col-span-2 h-40 bg-white shadow-xl border border-green-200 p-4 rounded-2xl lg:w-70">
+      <div class="flex items-center justify-between">
+        <p class="font-medium mb-3">Total Balance</p>
+        <lucide-angular [img]="Eye" class="text-right w-6 h-6 text-green-500"></lucide-angular>
+      </div>
       <p class="font-bold">KES 530,000.20</p>
       <p class="text-[12px]"><span class="text-green-500">+12.5%</span> from last month</p>
     </div>
-    @for (account of accounts; track account.type) {
-      <div class="lg:w-70 bg-white shadow-xl border border-green-200 p-4 rounded-xl">
-        <div class="flex items-center justify-center gap-2 my-4">
-          <lucide-angular [img]="account.icon" class="w-6 h-6 text-green-500"></lucide-angular>
-          <div>
-            <p class="font-medium">{{ account.name }}</p>
-            <p class="text-[12px]">{{ account.number }}</p>
-          </div>
-        </div>
-        <div class="mt-6">
-          <p class="font-medium mt-2">KES {{ account.balance }}</p>
-          <small>Available Balance</small>
-        </div>
+    <div class="max-lg:col-span-2 lg:flex items-center justify-center">
+      <div class="flex items-center justify-between p-4 lg:hidden">
+        <h2 class="font-medium">Accounts</h2>
+        <a routerLink="accounts" class="text-green-500">View all</a>
       </div>
-    }
+      @for (account of accounts; track account.type) {
+        <div
+          class="flex items-center justify-between bg-white shadow-xl border border-green-200 p-4 rounded-xl lg:w-70 lg:mx-2"
+        >
+          <div class="flex items-center justify-center gap-2 my-4">
+            <lucide-angular [img]="account.icon" class="w-6 h-6 text-green-500"></lucide-angular>
+            <div>
+              <p class="max-md:text-[14px] font-medium">{{ account.name }}</p>
+              <p class="text-[12px]">{{ account.number }}</p>
+            </div>
+          </div>
+          <div class="mt-6">
+            <p class="max-md:text-[14px] font-medium mt-2">KES {{ account.balance }}</p>
+            <small>Available Balance</small>
+          </div>
+          <lucide-angular
+            class="lg:hidden"
+            routerLink="accounts"
+            [img]="ChevronRight"
+          ></lucide-angular>
+        </div>
+      }
+    </div>
   </div>
 
   <div class="max-lg:flex-col space-x-2 my-4 lg:flex items-center justify-center">
@@ -126,4 +144,3 @@
     </div>
   </div>
 </section>
-<router-outlet></router-outlet>

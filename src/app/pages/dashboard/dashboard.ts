@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
-import { LucideAngularModule, Router, Wallet, PiggyBank, Smartphone, Send, ReceiptText, FileSliders, UserRoundPlus, Bell } from 'lucide-angular';
+import { LucideAngularModule, Wallet, ChevronRight, PiggyBank, Smartphone, Send, ReceiptText, FileSliders, UserRoundPlus, Bell, Eye } from 'lucide-angular';
 import { QuickActions } from '../../quick-actions/quick-actions';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, } from '@angular/router';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [LucideAngularModule, RouterOutlet],
+  imports: [LucideAngularModule, RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
   readonly Wallet = Wallet; 
   readonly Bell = Bell; 
+  readonly Eye = Eye; 
+  readonly ChevronRight = ChevronRight; 
 
   accounts = [
     {
