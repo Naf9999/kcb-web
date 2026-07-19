@@ -1,1 +1,52 @@
-<p>profile works!</p>
+<section>
+  <div class="mb-4 flex items-center justify-between">
+    <div>
+      <h2 class="font-bold mb-2">Profile</h2>
+      <p>Manage your Personal infomation and preferences.</p>
+    </div>
+    <button class="bg-green-500 p-2 rounded-lg">Edit Profile</button>
+  </div>
+
+  <div class="grid">
+    <div class="flex flex-col items-center justify-center shadow-md rounded-lg mb-2">
+      <lucide-angular
+        [img]="User"
+        class="text-white h-18 w-18 rounded-full bg-gray-300 flex items-center justify-center p-1"
+      ></lucide-angular>
+      <h2>John Doe</h2>
+      <small class="text-green-500">Premium Customer</small>
+    </div>
+
+    <div class="shadow-md p-2">
+      <h2 class="font-bold mb-3">Pesonal information</h2>
+      <form class="grid grid-cols-2 gap-2">
+        <div class="flex flex-col">
+          <label for="">First Name</label>
+          <input class="border rounded-lg p-2" type="text" id="name" />
+        </div>
+
+        <div class="flex flex-col">
+          <label for="">Last Name</label>
+          <input class="border rounded-lg p-2" type="text" />
+        </div>
+        <div class="flex flex-col">
+          <label for="">Email</label>
+          <input class="border rounded-lg p-2" type="text" />
+        </div>
+        <div class="flex flex-col">
+          <label for="">Phone</label>
+          <input class="border rounded-lg p-2" type="text" />
+        </div>
+        <div class="flex flex-col">
+          <label for="">Date of Birth</label>
+          <input class="border rounded-lg p-2" type="text" />
+        </div>
+        <div class="flex flex-col">
+          <label for="">Nationality</label>
+          <input class="border rounded-lg p-2" type="text" />
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</section>

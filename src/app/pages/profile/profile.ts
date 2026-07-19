@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { LucideAngularModule, User } from 'lucide-angular';
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [RouterOutlet, LucideAngularModule],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
-export class Profile {}
+export class Profile {
+  readonly User = User;
+}
